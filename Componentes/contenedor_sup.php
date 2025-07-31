@@ -2,7 +2,6 @@
   .blur-wrapper {
       position: relative;
       width: 100%;
-   
     }
 
   .overlay-wrapper {
@@ -18,6 +17,7 @@
   gap: 20px;
   padding: 0 40px;
   border-radius: 25px;
+  margin-bottom: 60px;
   }
 
 .overlay-wrapper::before,
@@ -27,7 +27,7 @@
       top: 0;
       bottom: 0;
       width: 100%;
-      header: 100%;
+      height: 100%;
       backdrop-filter: blur(10px);
       z-index: -1;
 

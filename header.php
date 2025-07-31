@@ -1,4 +1,8 @@
-
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,16 +18,16 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #042f71ff;">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000ff;">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="./index.php" style="font-weight: bold; font-size: 1.5rem; letter-spacing: 1px;">
-            <img src="./IMG/logo.png" width="100" class="me-2">
+            <img src="./IMG/logo3.png" width="100" class="me-2">
             <div style="line-height: 1; margin-top: -4px;">
                 <span style="font-size: 1.5rem; display: block; margin-bottom: -8px;">ELECTROVOLTIO</span>
                 <small style="font-size: 0.85rem;">Tu tienda, tu hogar...</small>
             </div>
         </a>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTienda" aria-controls="navbarTienda" aria-expanded="false" aria-label="Abrir menú">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,11 +35,12 @@
         <div class="collapse navbar-collapse" id="navbarTienda">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" href="./index.php" style="font-weight: 600;">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./audio.php" style="font-weight: 600;">Audio</a></li>
                 <li class="nav-item"><a class="nav-link active" href="./computadoras.php" style="font-weight: 600;">Computadoras</a></li>
                 <li class="nav-item"><a class="nav-link active" href="./electrohogar.php" style="font-weight: 600;">Electrohogar</a></li>
                 <li class="nav-item"><a class="nav-link active" href="./moviles.php" style="font-weight: 600;">Móviles</a></li>
-                <li class="nav-item"><a class="nav-link active" href="./TV.php" style="font-weight: 600;">TV</a></li>
-                <li class="nav-item"><a class="nav-link active" href="./sonido.php" style="font-weight: 600;">Sonido</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./TV.php" style="font-weight: 600 ;">TV</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./videojuegos.php" style="font-weight: 600;">Videojuegos</a></li>
                 <li class="nav-item"><a class="nav-link active" href="./contacto.php" style="font-weight: 600;">Contacto</a></li>
             </ul>
 
@@ -44,9 +49,34 @@
                 <button class="btn btn-outline-light" type="submit">Buscar</button>
             </form>
 
-            <a href="#" class="btn btn-light">
+        <div class="d-flex align-items-center py-2">
+                <div>
+            <a href="#" class="btn btn-light ms-2">
                 <i class="bi bi-cart"></i> Carrito
             </a>
+            </div>
+
+            <div>
+                <a href="#" class="btn btn-light ms-2 me-3">
+                <i class="bi bi-heart"></i> Favoritos
+            </a>
+            </div>
+            
+            <br>
+<?php if (isset($_SESSION['usuario'])): ?>
+    <div class="d-flex align-items-center text-white me-2">
+        <i class="bi bi-person-circle me-1"></i>
+        <?php echo htmlspecialchars($_SESSION['usuario']); ?>
+    </div>
+    <a href="./cerrar_sesion.php" class="btn btn-outline-light ms-2" title="Cerrar sesión">
+        <i class="bi bi-box-arrow-right"></i>
+    </a>
+<?php else: ?>
+    <a href="./sesion.php" class="btn btn-outline-light" title="Iniciar sesión">
+        <i class="bi bi-person-circle"></i>
+    </a>
+<?php endif; ?>
+            </div>
         </div>
     </div>
 </nav>
