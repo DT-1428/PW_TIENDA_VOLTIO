@@ -22,41 +22,37 @@ if (session_status() === PHP_SESSION_NONE) {
     </div> 
 
     <div class="container">
-    <h2 class="text-center my-5">Productos Destacados</h2>
+    <h2 class="text-center my-5">MÓVILES</h2>
+
+    <!-- FILA 1 -->
     <div class="row">
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="./IMG/celu.jpg" class="card-img-top" alt="Producto 1">
+                <img src="./IMG/MOVILES/APPLE/IPhone 16 Pro Max 256GB Blanco.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Producto 1</h5>
-                    <p class="card-text">Descripción breve del producto 1.</p>
-                    <div class="mt-auto">
-                        <span class="badge bg-primary fs-5">S/ 999.00</span>
-                    </div>
+                    <p class="card-text">APPLE</p>
+                    <h5 class="card-title">IPhone 16 Pro Max 256GB Blanco</h5>
+                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 5999.00</h3></span>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="./IMG/celu.jpg" class="card-img-top" alt="Producto 2">
+                <img src="./IMG/MOVILES/APPLE/IPhone 16 Pro 128GB Negro.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Producto 2</h5>
-                    <p class="card-text">Descripción breve del producto 2.</p>
-                    <div class="text-center mt-auto">
-                        <span class="badge bg-primary fs-5">S/ 799.00</span>
-                    </div>
+                    <p class="card-text">APPLE</p>
+                    <h5 class="card-title">IPhone 16 Pro 128GB Negro</h5>
+                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 4999.00</h3></span>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="./IMG/celu.jpg" class="card-img-top" alt="Producto 3">
+                <img src="./IMG/MOVILES/SAMSUNG/Samsung S25 ULTRA TITANIO.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Producto 3</h5>
-                    <p class="card-text">Descripción breve del producto 3.</p>
-                    <div class="text-center mt-auto">
-                        <span class="badge bg-primary fs-5">S/ 599.00</span>
-                    </div>
+                    <p class="card-text">SAMSUNG</p>
+                    <h5 class="card-title">Samsung Galaxy S25 Ultra 256GB Titaniun</h5>
+                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 6599.00</h3></span>
                 </div>
             </div>
         </div>

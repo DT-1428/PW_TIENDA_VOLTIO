@@ -3,51 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Móviles</title>
+    <title>TV</title>
     <?php
     include 'header.php'
     ?>
 </head>
 <body>
     <div class="position-relative" style="height:550px;">
-        <img src="./IMG/Moviles.jpg" class="d-block w-100 h-100" style="object-fit:cover;" alt="">
+        <img src="./IMG/pc.jpg" class="d-block w-100 h-100" style="object-fit:cover;" alt="...">
     </div>
     <div style="height:40px; width:100%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 1));"></div>
-
-
-
     <div class="container">
-    <h2 class="text-center my-5">MÓVILES</h2>
+    <h2 class="text-center my-5">SMART TV</h2>
 
     <!-- FILA 1 -->
     <div class="row">
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="./IMG/MOVILES/APPLE/IPhone 16 Pro Max 256GB Blanco.jpg" class="card-img-top" alt="Producto 1">
+                <img src="./IMG/TVS/LG 55 PULGADAS.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
-                    <p class="card-text">APPLE</p>
-                    <h5 class="card-title">IPhone 16 Pro Max 256GB Blanco</h5>
-                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 5999.00</h3></span>
+                    <p class="card-text">LG</p>
+                    <h5 class="card-title">Televisor LG 55" UHD 4K</h5>
+                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 1799.00</h3></span>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="./IMG/MOVILES/APPLE/IPhone 16 Pro 128GB Negro.jpg" class="card-img-top" alt="Producto 1">
+                <img src="./IMG/TVS/HISENSE 65 PULGADAS.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
-                    <p class="card-text">APPLE</p>
-                    <h5 class="card-title">IPhone 16 Pro 128GB Negro</h5>
-                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 4999.00</h3></span>
+                    <p class="card-text">HISENSE</p>
+                    <h5 class="card-title">Televisor Hisense 65" QLED UHD 4K</h5>
+                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 1679.00</h3></span>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="./IMG/MOVILES/APPLE/IPhone 16 Pro 128GB Titanio.jpg" class="card-img-top" alt="Producto 1">
+                <img src="./IMG/TVS/HYUNDAI 32 PULGADAS.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
-                    <p class="card-text">APPLE</p>
-                    <h5 class="card-title">IPhone 16 Pro 128GB Titanio</h5>
-                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 4999.00</h3></span>
+                    <p class="card-text">HYUNDAI</p>
+                    <h5 class="card-title">Televisor Hyundai 32" LED HD</h5>
+                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 429.00</h3></span>
                 </div>
             </div>
         </div>
@@ -57,21 +54,21 @@
     <div class="row">
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="./IMG/MOVILES/APPLE/IPhone 13 128GB Negro.jpg" class="card-img-top" alt="Producto 1">
+                <img src="./IMG/TVS/SAMSUNG 65 PULGADAS.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
-                    <p class="card-text">APPLE</p>
-                    <h5 class="card-title">IPhone 13 128GB Negro</h5>
-                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 2099.00</h3></span>
+                    <p class="card-text">SAMSUNG</p>
+                    <h5 class="card-title">Televisor Samsung 65"</h5>
+                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 3199.00</h3></span>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="./IMG/MOVILES/APPLE/IPhone 16 128GB Blanco.jpg" class="card-img-top" alt="Producto 1">
+                <img src="./IMG/TVS/SAMSUNG QLED 65 PULGADAS.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
-                    <p class="card-text">APPLE</p>
-                    <h5 class="card-title">IPhone 16 128GB Blanco</h5>
-                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 3899.00</h3></span>
+                    <p class="card-text">SAMSUNG</p>
+                    <h5 class="card-title">Televisor Samsung 65" QLED 4K</h5>
+                    <span class="text-center text-primary fw-bold border border-primary rounded px-4 py-2"><h3>S/ 3599.00</h3></span>
                 </div>
             </div>
         </div>

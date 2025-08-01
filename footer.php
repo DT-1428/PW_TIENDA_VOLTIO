@@ -18,10 +18,10 @@
 
     <div class="col-md-4 mb-3">
         <h5 class="text-uppercase">Síguenos</h5>
-        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
-        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
-        <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-4"></i></a>
-        <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+        <a href="https://www.facebook.com/?locale=es_LA" class="text-white me-3" target="_blank"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="https://www.instagram.com/" class="text-white me-3" target="_blank"><i class="bi bi-instagram fs-4"></i></a>
+        <a href="https://x.com/?lang=es" class="text-white me-3" target="_blank"><i class="bi bi-twitter-x fs-4"></i></a>
+        <a href="https://www.youtube.com/" class="text-white" target="_blank"><i class="bi bi-youtube fs-4"></i></a>
     </div>
 
     </div>
