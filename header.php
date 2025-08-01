@@ -39,7 +39,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <li class="nav-item"><a class="nav-link active" href="./computadoras.php" style="font-weight: 600;">Computadoras</a></li>
                 <li class="nav-item"><a class="nav-link active" href="./electrohogar.php" style="font-weight: 600;">Electrohogar</a></li>
                 <li class="nav-item"><a class="nav-link active" href="./moviles.php" style="font-weight: 600;">Móviles</a></li>
-                <li class="nav-item"><a class="nav-link active" href="./TV.php" style="font-weight: 600 ;">TV</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./smart tv.php" style="font-weight: 600 ;">Smart TV</a></li>
                 <li class="nav-item"><a class="nav-link active" href="./videojuegos.php" style="font-weight: 600;">Videojuegos</a></li>
                 <li class="nav-item"><a class="nav-link active" href="./contacto.php" style="font-weight: 600;">Contacto</a></li>
             </ul>
