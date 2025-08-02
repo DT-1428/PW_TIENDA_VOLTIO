@@ -22,7 +22,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000ff;">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="./index.php" style="font-weight: bold; font-size: 1.5rem; letter-spacing: 1px;">
-            <img src="./IMG/logo3.png" width="100" class="me-2">
+            <img src="./IMG/IMG externos/logo3.png" width="100" class="me-2">
             <div style="line-height: 1; margin-top: -4px;">
                 <span style="font-size: 1.5rem; display: block; margin-bottom: -8px;">ELECTROVOLTIO</span>
                 <small style="font-size: 0.85rem;">Tu tienda, tu hogar...</small>

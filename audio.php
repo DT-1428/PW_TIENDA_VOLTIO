@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,12 @@
 
 <body>
     <div class="position-relative" style="height:550px;">
-        <img src="./IMG/Audio.jpg" class="d-block w-100 h-100" style="object-fit:cover;" alt="...">
+        <img src="./IMG/IMG externos./Audio.jpg" class="d-block w-100 h-100" style="object-fit:cover;" alt="...">
     </div>
     <div style="height:40px; width:100%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 1));"></div>
 
     <div class="container">
-        <h2 class="text-center my-5">AUDIO</h2>
+        <h2 class="subtitulo">AUDIO</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
@@ -28,15 +28,12 @@
                         <div class="text-center mt-auto">
                             <span class="badge bg-primary fs-5">S/ 999.00</span>
 
-
-
                             <button class="btn btn-success btn-sm mt-2 add-to-cart"
                                 data-id="audio1"
                                 data-title="Producto 1"
                                 data-price="999.00"
-                                data-img="./IMG/celu.jpg">Agregar al carrito</button>
-
-
+                                data-img="./IMG/celu.jpg">Agregar al carrito
+                            </button>
 
                         </div>
                     </div>
@@ -51,14 +48,12 @@
                         <div class="text-center mt-auto">
                             <span class="badge bg-primary fs-5">S/ 799.00</span>
 
-
                             <button class="btn btn-success btn-sm mt-2 add-to-cart"
                                 data-id="audio2"
                                 data-title="Producto 2"
                                 data-price="799.00"
-                                data-img="./IMG/celu.jpg">Agregar al carrito</button>
-
-
+                                data-img="./IMG/celu.jpg">Agregar al carrito
+                            </button>
 
                         </div>
                     </div>
@@ -73,13 +68,12 @@
                         <div class="text-center mt-auto">
                             <span class="badge bg-primary fs-5">S/ 599.00</span>
 
-
                             <button class="btn btn-success btn-sm mt-2 add-to-cart"
                                 data-id="audio3"
                                 data-title="Producto 3"
                                 data-price="599.00"
-                                data-img="./IMG/celu.jpg">Agregar al carrito</button>
-
+                                data-img="./IMG/celu.jpg">Agregar al 
+                            </button>
 
                         </div>
                     </div>
@@ -113,7 +107,6 @@
             });
         });
     </script>
-
 
 </body>
 <footer>

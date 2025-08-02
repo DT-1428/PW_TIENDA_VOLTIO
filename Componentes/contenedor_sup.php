@@ -83,7 +83,7 @@
         <video src="./videos./iPhone 16 Pro Max.mp4" autoplay muted loop></video>
     </div>
     <div>
-      <a href="https://www.apple.com/la/" target="_blank"><img src="./IMG./icon-apple.png" widht="60rem" height="60rem"></a>
+      <a href="https://www.apple.com/la/" target="_blank"><img src="./IMG./IMG externos./icon-apple.png" widht="60rem" height="60rem"></a>
     </div>
   </div>
   <div class="overlay-container">
@@ -91,7 +91,7 @@
         <video src="./videos./Ps5.mp4" autoplay muted loop></video>
     </div>
     <div>
-      <a href="https://www.playstation.com/es-pe/ps5/" target="_blank"><img src="./IMG./icon-ps5.png" widht="60rem" height="60rem"></a>
+      <a href="https://www.playstation.com/es-pe/ps5/" target="_blank"><img src="./IMG./IMG externos./icon-ps5.png" widht="60rem" height="60rem"></a>
     </div>
   </div>
   <div class="overlay-container">
@@ -99,7 +99,7 @@
         <video src="./videos./Samsung.mp4" autoplay muted loop></video>
     </div>
     <div>
-      <a href="https://www.samsung.com/pe/?srsltid=AfmBOoornFPoZePCqX_Vq4_LLsTi49l5QZP29UPIRAgSekw7C7s2LPdH" target="_blank"><img src="./IMG./icon-samsung.png" widht="60rem" height="60rem"></a>
+      <a href="https://www.samsung.com/pe/?srsltid=AfmBOoornFPoZePCqX_Vq4_LLsTi49l5QZP29UPIRAgSekw7C7s2LPdH" target="_blank"><img src="./IMG./IMG externos./icon-samsung.png" widht="60rem" height="60rem"></a>
     </div>
   </div>
 </div>

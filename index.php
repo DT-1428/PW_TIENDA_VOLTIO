@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " IMG>
     <title>ELECTROVOLTIO</title>
     <?php
     include 'header.php'

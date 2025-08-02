@@ -8,7 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
-<body background="./IMG/Fondo-contactos.jpg" style="background-repeat: no-repeat; background-size:100% 100%; background-attachment: fixed;">
+<body background="./IMG/IMG externos/Fondo-contactos.jpg" style="background-repeat: no-repeat; background-size:100% 100%; background-attachment: fixed;">
 
 <?php
 $confirmacion = '';

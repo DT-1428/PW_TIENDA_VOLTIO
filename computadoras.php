@@ -9,10 +9,9 @@
     ?>
 </head>
 <body>
-    <div class="position-relative" style="height:550px;">
-        <img src="./IMG/computadoras.jpg" class="d-block w-100 h-100" style="object-fit:cover;" alt="">
+    <div class="position-relative" style="height:500px;">
+        <img src="./IMG/IMG externos/computadoras3.1.png" class="d-block w-100 h-100" style="object-fit:cover;" alt="">
     </div>
 <div style="height:40px; width:100%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 1));"></div>
- 
 </body>
 </html>

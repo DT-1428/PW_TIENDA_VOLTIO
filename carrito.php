@@ -62,26 +62,26 @@
     <main>
         <div class="container py-4">
             <h1 class="text-center fw-bold mb-4" style="color:#1677ff;">Your Shopping Cart</h1>
-            <!-- Stepper igual que antes -->
+
             <ul class="nav nav-pills justify-content-center mb-4 stepper">
-                <li class="nav-item"><span class="nav-link active">Cart</span></li>
+                <li class="nav-item"><span class="nav-link active">Carrito</span></li>
                 <li class="nav-item"><span class="nav-link">Shipping</span></li>
                 <li class="nav-item"><span class="nav-link">Payment</span></li>
                 <li class="nav-item"><span class="nav-link">Review</span></li>
             </ul>
             <div class="row g-4">
-                <!-- Carrito -->
+
                 <div class="col-lg-8">
                     <div class="bg-white rounded-4 p-3 mb-3 shadow-sm" id="cart-items">
-                        <!-- Los productos se cargarán aquí dinámicamente -->
+
                     </div>
-                    <!-- Instrucciones especiales igual que antes -->
+
                     <div class="bg-white rounded-4 p-3 shadow-sm mb-4">
                         <label class="fw-semibold mb-2" for="instructions">Special Instructions</label>
                         <textarea class="form-control" id="instructions" rows="3" placeholder="Add any special instructions or comments for your order here..."></textarea>
                     </div>
                 </div>
-                <!-- Resumen igual que antes -->
+
                 <div class="col-lg-4">
                     <div class="bg-white rounded-4 p-4 shadow-sm mb-4">
                         <h5 class="fw-semibold mb-3">Order Summary</h5>
@@ -94,11 +94,11 @@
                             <span id="shipping">S/ 15.00</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
-                            <span>Taxes</span>
+                            <span>IGV</span>
                             <span id="taxes">S/ 23.00</span>
                         </div>
                         <div class="d-flex justify-content-between mb-3 fw-bold text-primary fs-5">
-                            <span>Order Total</span>
+                            <span>Orden Total</span>
                             <span id="total">S/ 0.00</span>
                         </div>
                         <div class="input-group mb-3">
@@ -112,10 +112,61 @@
                     </div>
                 </div>
             </div>
-            <!-- Recomendaciones igual que antes... -->
         </div>
+
+
+
+
+
+
+<div class="modal fade" id="sandboxModal" tabindex="-1" aria-labelledby="sandboxModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <form id="sandbox-payment-form">
+        <div class="modal-header">
+        <h5 class="modal-title" id="sandboxModalLabel">Pago Sandbox</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+        <div class="mb-3">
+            <label for="sandbox-card" class="form-label">Número de tarjeta</label>
+            <input type="text" class="form-control" id="sandbox-card" placeholder="4111 1111 1111 1111" maxlength="19" required inputmode="numeric" pattern="\d*">
+        </div>
+        <div class="mb-3 row">
+            <div class="col">
+            <label for="sandbox-exp" class="form-label">Expiración</label>
+            <input type="text" class="form-control" id="sandbox-exp" placeholder="MM/AA" maxlength="5" required inputmode="numeric" pattern="\d*">
+            </div>
+            <div class="col">
+            <label for="sandbox-cvc" class="form-label">CVC</label>
+            <input type="text" class="form-control" id="sandbox-cvc" placeholder="123" maxlength="4" required inputmode="numeric" pattern="\d*">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="sandbox-name" class="form-label">Nombre en la tarjeta</label>
+            <input type="text" class="form-control" id="sandbox-name" required>
+        </div>
+        <div class="alert alert-info small">
+            Este es un entorno de pruebas. No se realizará ningún cobro real.
+        </div>
+        </div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-primary w-100">Pagar ahora</button>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
     </main>
-    <!-- Bootstrap JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let appliedCoupon = null;
@@ -233,7 +284,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             renderCart();
-            // Cupón
+
             const couponInput = document.getElementById('coupon-input');
             const couponBtn = document.getElementById('coupon-btn');
             if (couponBtn && couponInput) {
@@ -249,10 +300,44 @@
                 }
             }
         });
+
+
+
+
+
+
+document.querySelector('.btn-primary.w-100.fw-bold.mb-2').addEventListener('click', function(e) {
+    e.preventDefault();
+    var modal = new bootstrap.Modal(document.getElementById('sandboxModal'));
+    modal.show();
+});
+
+document.getElementById('sandbox-payment-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const tarjeta = document.getElementById('sandbox-card').value;
+    const expiracion = document.getElementById('sandbox-exp').value;
+    const cvc = document.getElementById('sandbox-cvc').value;
+    const nombre = document.getElementById('sandbox-name').value;
+
+    fetch('guardar_pago.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `tarjeta=${encodeURIComponent(tarjeta)}&expiracion=${encodeURIComponent(expiracion)}&cvc=${encodeURIComponent(cvc)}&nombre=${encodeURIComponent(nombre)}`
+    }).then(res => res.text()).then(resp => {
+        document.getElementById('sandbox-payment-form').reset();
+        var modal = bootstrap.Modal.getInstance(document.getElementById('sandboxModal'));
+        modal.hide();
+        alert('¡Pago simulado exitoso! Gracias por tu compra.');
+        localStorage.removeItem('cart');
+        window.location.reload();
+    });
+});
+
+
     </script>
 
     <?php
-    // Asegúrate de que footer.php existe y no genera errores
     include 'footer.php';
     ?>
 
