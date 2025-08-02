@@ -210,7 +210,7 @@
             let discount = 0;
             let couponRow = document.getElementById('discount-row');
             if (appliedCoupon === 'EL DURO') {
-                discount = (subtotal + shipping + taxes) * 0.02;
+                discount = (subtotal + shipping + taxes) * 0.01;
                 if (!couponRow) {
                     couponRow = document.createElement('div');
                     couponRow.className = "d-flex justify-content-between mb-2 text-success";
