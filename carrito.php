@@ -54,11 +54,12 @@
         }
     </style>
     <?php
-    include 'header.php'
+    include 'header.php';
     ?>
-</head>
+    </head>
 
 <body>
+    <main>
     <div class="container py-4">
         <h1 class="text-center fw-bold mb-4" style="color:#1677ff;">Your Shopping Cart</h1>
         <!-- Stepper igual que antes -->
@@ -86,23 +87,23 @@
                     <h5 class="fw-semibold mb-3">Order Summary</h5>
                     <div class="d-flex justify-content-between mb-2">
                         <span>Subtotal</span>
-                        <span id="subtotal">$0.00</span>
+                        <span id="subtotal">S/ 0.00</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span>Shipping Estimate</span>
-                        <span id="shipping">$15.00</span>
+                        <span id="shipping">S/ 15.00</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span>Taxes</span>
-                        <span id="taxes">$23.00</span>
+                        <span id="taxes">S/ 23.00</span>
                     </div>
                     <div class="d-flex justify-content-between mb-3 fw-bold text-primary fs-5">
                         <span>Order Total</span>
-                        <span id="total">$0.00</span>
+                        <span id="total">S/ 0.00</span>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Enter code">
-                        <button class="btn btn-outline-primary">Apply</button>
+                        <input type="text" class="form-control" placeholder="Enter code" disabled>
+                        <button class="btn btn-outline-primary" disabled><!-- Botón deshabilitado, funcionalidad pendiente -->Apply</button>
                     </div>
                     <button class="btn btn-primary w-100 fw-bold mb-2">Proceed to Checkout &rsaquo;</button>
                     <div class="text-center text-muted small">
@@ -113,11 +114,22 @@
         </div>
         <!-- Recomendaciones igual que antes... -->
     </div>
+    </main>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        function safeGetCart() {
+            try {
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                if (!Array.isArray(cart)) return [];
+                return cart;
+            } catch (e) {
+                return [];
+            }
+        }
+
         function renderCart() {
-            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            let cart = safeGetCart();
             let cartItems = document.getElementById('cart-items');
             cartItems.innerHTML = '';
             if (cart.length === 0) {
@@ -136,11 +148,11 @@
             </div>
             <div class="d-flex flex-column align-items-end">
                 <div class="input-group input-group-sm mb-1" style="width: 100px;">
-                    <button class="btn btn-outline-secondary btn-minus">-</button>
-                    <input type="text" class="form-control text-center item-qty" value="${item.qty}" readonly>
-                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                    <button class="btn btn-outline-secondary btn-minus" aria-label="Disminuir cantidad">-</button>
+                    <input type="text" class="form-control text-center item-qty" value="${item.qty}" readonly aria-label="Cantidad">
+                    <button class="btn btn-outline-secondary btn-plus" aria-label="Aumentar cantidad">+</button>
                 </div>
-                <a href="#" class="text-decoration-none text-muted small btn-remove">Remove</a>
+                <a href="#" class="text-decoration-none text-muted small btn-remove" aria-label="Eliminar producto">Remove</a>
             </div>
         `;
                 cartItems.appendChild(div);
@@ -154,22 +166,26 @@
                 btn.onclick = function() {
                     let itemDiv = btn.closest('.cart-item');
                     let id = itemDiv.getAttribute('data-id');
-                    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-                    let prod = cart.find(p => p.id === id);
-                    prod.qty += 1;
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    renderCart();
+                    let cart = safeGetCart();
+                    let prod = cart.find(p => String(p.id) === String(id));
+                    if (prod) {
+                        prod.qty += 1;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        renderCart();
+                    }
                 }
             });
             document.querySelectorAll('.btn-minus').forEach(btn => {
                 btn.onclick = function() {
                     let itemDiv = btn.closest('.cart-item');
                     let id = itemDiv.getAttribute('data-id');
-                    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-                    let prod = cart.find(p => p.id === id);
-                    if (prod.qty > 1) prod.qty -= 1;
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    renderCart();
+                    let cart = safeGetCart();
+                    let prod = cart.find(p => String(p.id) === String(id));
+                    if (prod && prod.qty > 1) {
+                        prod.qty -= 1;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        renderCart();
+                    }
                 }
             });
             document.querySelectorAll('.btn-remove').forEach(btn => {
@@ -177,8 +193,8 @@
                     e.preventDefault();
                     let itemDiv = btn.closest('.cart-item');
                     let id = itemDiv.getAttribute('data-id');
-                    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-                    cart = cart.filter(p => p.id !== id);
+                    let cart = safeGetCart();
+                    cart = cart.filter(p => String(p.id) !== String(id));
                     localStorage.setItem('cart', JSON.stringify(cart));
                     renderCart();
                 }
@@ -186,18 +202,24 @@
         }
 
         function updateTotals() {
-            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            let cart = safeGetCart();
             let subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-            document.getElementById('subtotal').textContent = 'S/ ' + subtotal.toFixed(2);
             let shipping = 15.00;
             let taxes = 23.00;
             let total = subtotal + shipping + taxes;
+            document.getElementById('subtotal').textContent = 'S/ ' + subtotal.toFixed(2);
+            document.getElementById('shipping').textContent = 'S/ ' + shipping.toFixed(2);
+            document.getElementById('taxes').textContent = 'S/ ' + taxes.toFixed(2);
             document.getElementById('total').textContent = 'S/ ' + total.toFixed(2);
         }
         document.addEventListener('DOMContentLoaded', renderCart);
     </script>
-</body>
+
 <?php
-    include 'footer.php'
+    // Asegúrate de que footer.php existe y no genera errores
+    include 'footer.php';
     ?>
+
+</body>
+
 </html>
