@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <meta name="theme-color" content="#0fd622ff" charset="UTF-8">
     <title>Your Shopping Cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 5 CDN -->
@@ -56,68 +56,70 @@
     <?php
     include 'header.php';
     ?>
-    </head>
+</head>
 
 <body>
     <main>
-    <div class="container py-4">
-        <h1 class="text-center fw-bold mb-4" style="color:#1677ff;">Your Shopping Cart</h1>
-        <!-- Stepper igual que antes -->
-        <ul class="nav nav-pills justify-content-center mb-4 stepper">
-            <li class="nav-item"><span class="nav-link active">Cart</span></li>
-            <li class="nav-item"><span class="nav-link">Shipping</span></li>
-            <li class="nav-item"><span class="nav-link">Payment</span></li>
-            <li class="nav-item"><span class="nav-link">Review</span></li>
-        </ul>
-        <div class="row g-4">
-            <!-- Carrito -->
-            <div class="col-lg-8">
-                <div class="bg-white rounded-4 p-3 mb-3 shadow-sm" id="cart-items">
-                    <!-- Los productos se cargarán aquí dinámicamente -->
+        <div class="container py-4">
+            <h1 class="text-center fw-bold mb-4" style="color:#1677ff;">Your Shopping Cart</h1>
+            <!-- Stepper igual que antes -->
+            <ul class="nav nav-pills justify-content-center mb-4 stepper">
+                <li class="nav-item"><span class="nav-link active">Cart</span></li>
+                <li class="nav-item"><span class="nav-link">Shipping</span></li>
+                <li class="nav-item"><span class="nav-link">Payment</span></li>
+                <li class="nav-item"><span class="nav-link">Review</span></li>
+            </ul>
+            <div class="row g-4">
+                <!-- Carrito -->
+                <div class="col-lg-8">
+                    <div class="bg-white rounded-4 p-3 mb-3 shadow-sm" id="cart-items">
+                        <!-- Los productos se cargarán aquí dinámicamente -->
+                    </div>
+                    <!-- Instrucciones especiales igual que antes -->
+                    <div class="bg-white rounded-4 p-3 shadow-sm mb-4">
+                        <label class="fw-semibold mb-2" for="instructions">Special Instructions</label>
+                        <textarea class="form-control" id="instructions" rows="3" placeholder="Add any special instructions or comments for your order here..."></textarea>
+                    </div>
                 </div>
-                <!-- Instrucciones especiales igual que antes -->
-                <div class="bg-white rounded-4 p-3 shadow-sm mb-4">
-                    <label class="fw-semibold mb-2" for="instructions">Special Instructions</label>
-                    <textarea class="form-control" id="instructions" rows="3" placeholder="Add any special instructions or comments for your order here..."></textarea>
+                <!-- Resumen igual que antes -->
+                <div class="col-lg-4">
+                    <div class="bg-white rounded-4 p-4 shadow-sm mb-4">
+                        <h5 class="fw-semibold mb-3">Order Summary</h5>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal</span>
+                            <span id="subtotal">S/ 0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Shipping Estimate</span>
+                            <span id="shipping">S/ 15.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Taxes</span>
+                            <span id="taxes">S/ 23.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 fw-bold text-primary fs-5">
+                            <span>Order Total</span>
+                            <span id="total">S/ 0.00</span>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter code" id="coupon-input">
+                            <button class="btn btn-outline-primary" id="coupon-btn">Apply</button>
+                        </div>
+                        <button class="btn btn-primary w-100 fw-bold mb-2">Proceed to Checkout &rsaquo;</button>
+                        <div class="text-center text-muted small">
+                            <span>🔒 Secure Checkout &nbsp; • &nbsp; SSL Encrypted</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Resumen igual que antes -->
-            <div class="col-lg-4">
-                <div class="bg-white rounded-4 p-4 shadow-sm mb-4">
-                    <h5 class="fw-semibold mb-3">Order Summary</h5>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Subtotal</span>
-                        <span id="subtotal">S/ 0.00</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Shipping Estimate</span>
-                        <span id="shipping">S/ 15.00</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Taxes</span>
-                        <span id="taxes">S/ 23.00</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-3 fw-bold text-primary fs-5">
-                        <span>Order Total</span>
-                        <span id="total">S/ 0.00</span>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Enter code" disabled>
-                        <button class="btn btn-outline-primary" disabled><!-- Botón deshabilitado, funcionalidad pendiente -->Apply</button>
-                    </div>
-                    <button class="btn btn-primary w-100 fw-bold mb-2">Proceed to Checkout &rsaquo;</button>
-                    <div class="text-center text-muted small">
-                        <span>🔒 Secure Checkout &nbsp; • &nbsp; SSL Encrypted</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Recomendaciones igual que antes... -->
         </div>
-        <!-- Recomendaciones igual que antes... -->
-    </div>
     </main>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        let appliedCoupon = null;
+
         function safeGetCart() {
             try {
                 const cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -135,26 +137,25 @@
             if (cart.length === 0) {
                 cartItems.innerHTML = '<div class="text-center text-muted py-5">No hay productos en el carrito.</div>';
             }
-            cart.forEach((item, idx) => {
+            cart.forEach(item => {
                 let div = document.createElement('div');
                 div.className = 'd-flex align-items-center mb-3 cart-item';
                 div.setAttribute('data-id', item.id);
-                div.setAttribute('data-price', item.price);
                 div.innerHTML = `
-            <img src="${item.img}" class="cart-item-img me-3" alt="">
-            <div class="flex-grow-1">
-                <div class="fw-semibold">${item.title}</div>
-                <div class="text-primary fw-bold">S/ <span class="item-price">${item.price.toFixed(2)}</span></div>
-            </div>
-            <div class="d-flex flex-column align-items-end">
-                <div class="input-group input-group-sm mb-1" style="width: 100px;">
-                    <button class="btn btn-outline-secondary btn-minus" aria-label="Disminuir cantidad">-</button>
-                    <input type="text" class="form-control text-center item-qty" value="${item.qty}" readonly aria-label="Cantidad">
-                    <button class="btn btn-outline-secondary btn-plus" aria-label="Aumentar cantidad">+</button>
+                <img src="${item.img}" class="cart-item-img me-3" alt="">
+                <div class="flex-grow-1">
+                    <div class="fw-semibold">${item.title}</div>
+                    <div class="text-primary fw-bold">S/ <span class="item-price">${item.price.toFixed(2)}</span></div>
                 </div>
-                <a href="#" class="text-decoration-none text-muted small btn-remove" aria-label="Eliminar producto">Remove</a>
-            </div>
-        `;
+                <div class="d-flex flex-column align-items-end">
+                    <div class="input-group input-group-sm mb-1" style="width: 100px;">
+                        <button class="btn btn-outline-secondary btn-minus" aria-label="Disminuir cantidad">-</button>
+                        <input type="text" class="form-control text-center item-qty" value="${item.qty}" readonly aria-label="Cantidad">
+                        <button class="btn btn-outline-secondary btn-plus" aria-label="Aumentar cantidad">+</button>
+                    </div>
+                    <a href="#" class="text-decoration-none text-muted small btn-remove" aria-label="Eliminar producto">Remove</a>
+                </div>
+            `;
                 cartItems.appendChild(div);
             });
             addCartEvents();
@@ -206,16 +207,51 @@
             let subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
             let shipping = 15.00;
             let taxes = 23.00;
-            let total = subtotal + shipping + taxes;
+            let discount = 0;
+            let couponRow = document.getElementById('discount-row');
+            if (appliedCoupon === 'EL DURO') {
+                discount = (subtotal + shipping + taxes) * 0.02;
+                if (!couponRow) {
+                    couponRow = document.createElement('div');
+                    couponRow.className = "d-flex justify-content-between mb-2 text-success";
+                    couponRow.id = "discount-row";
+                    couponRow.innerHTML = `<span>Descuento (EL DURO)</span><span id="discount">-S/ ${discount.toFixed(2)}</span>`;
+                    let totalDiv = document.getElementById('total').parentNode;
+                    totalDiv.parentNode.insertBefore(couponRow, totalDiv);
+                } else {
+                    document.getElementById('discount').textContent = `-S/ ${discount.toFixed(2)}`;
+                }
+            } else if (couponRow) {
+                couponRow.remove();
+            }
+            let total = subtotal + shipping + taxes - discount;
             document.getElementById('subtotal').textContent = 'S/ ' + subtotal.toFixed(2);
             document.getElementById('shipping').textContent = 'S/ ' + shipping.toFixed(2);
             document.getElementById('taxes').textContent = 'S/ ' + taxes.toFixed(2);
             document.getElementById('total').textContent = 'S/ ' + total.toFixed(2);
         }
-        document.addEventListener('DOMContentLoaded', renderCart);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+            // Cupón
+            const couponInput = document.getElementById('coupon-input');
+            const couponBtn = document.getElementById('coupon-btn');
+            if (couponBtn && couponInput) {
+                couponBtn.disabled = false;
+                couponInput.disabled = false;
+                couponBtn.onclick = function() {
+                    if (couponInput.value.trim().toUpperCase() === 'EL DURO') {
+                        appliedCoupon = 'EL DURO';
+                    } else {
+                        appliedCoupon = null;
+                    }
+                    updateTotals();
+                }
+            }
+        });
     </script>
 
-<?php
+    <?php
     // Asegúrate de que footer.php existe y no genera errores
     include 'footer.php';
     ?>

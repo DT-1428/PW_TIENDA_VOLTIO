@@ -8,6 +8,18 @@
     include 'header.php'
     ?>
 </head>
+
+<style>
+.mini-container{
+    
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.12);
+    
+}
+.mini-container:hover{
+    border: 2px solid #2909e3ff;
+}   
+</style>
+
 <body>
     <div class="position-relative" style="height:550px;">
         <img src="./IMG/Moviles.jpg" class="d-block w-100 h-100" style="object-fit:cover;" alt="">
@@ -22,7 +34,7 @@
     <!-- FILA 1 -->
     <div class="row">
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/APPLE/IPhone 16 Pro Max 256GB Blanco.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">APPLE</p>
@@ -32,7 +44,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/APPLE/IPhone 16 Pro 128GB Negro.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">APPLE</p>
@@ -42,7 +54,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/APPLE/IPhone 16 Pro 128GB Titanio.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">APPLE</p>
@@ -56,7 +68,7 @@
     <!-- FILA 2 -->
     <div class="row">
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/APPLE/IPhone 13 128GB Negro.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">APPLE</p>
@@ -66,7 +78,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/APPLE/IPhone 16 128GB Blanco.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">APPLE</p>
@@ -76,7 +88,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/SAMSUNG/Samsung A36.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">SAMSUNG</p>
@@ -90,7 +102,7 @@
     <!-- Fila 3 -->
     <div class="row">
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/SAMSUNG/Samsung A56.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">SAMSUNG</p>
@@ -100,7 +112,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/SAMSUNG/Samsung S25 ULTRA Negro.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">SAMSUNG</p>
@@ -110,7 +122,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/SAMSUNG/Samsung S25 Icy Blue.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">SAMSUNG</p>
@@ -124,7 +136,7 @@
     <!-- FILA 4 -->
     <div class="row">
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/SAMSUNG/Samsung S25 ULTRA TITANIO.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">SAMSUNG</p>
@@ -134,7 +146,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/XIAOMI/REDMI NOTE 14 PRO 5G.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">XIAOMI</p>
@@ -144,7 +156,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/XIAOMI/REDMI NOTE 14 PRO 5G NEGRO.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">XIAOMI</p>
@@ -158,7 +170,7 @@
     <!-- FILA 5 -->
     <div class="row">
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/XIAOMI/XIAOMI 15.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">XIAOMI</p>
@@ -168,7 +180,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="mini-container card h-100">
                 <img src="./IMG/MOVILES/XIAOMI/XIAOMI 14T.jpg" class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <p class="card-text">XIAOMI</p>
