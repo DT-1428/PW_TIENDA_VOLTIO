@@ -51,7 +51,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <div class="d-flex align-items-center py-2">
                 <div>
-            <a href="#" class="btn btn-light ms-2">
+            <a href="carrito.php" class="btn btn-light ms-2">
                 <i class="bi bi-cart"></i> Carrito
             </a>
             </div>
